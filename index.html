@@ -1,16 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Index Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        /**
+ * index.scss
+ * - Add any styles you want here!
+ */
+body,
+html {
+  background: #0e83cd;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+.m-page--transition {
+  background-color: #7cbdff;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 100%;
+}
+
+.btn-1 {
+  border: 3px solid #fff;
+  color: #fff;
+}
+.btn-1:hover {
+  color: #0e83cd;
+  background: rgb(13, 159, 204);
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
+}
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="m-page--transition"></div>
+<button class="btn-r btn-1" src="./adminPage.html">
+  <a href="./adminPage.html" class="text-light">Admin</a></button>
+<button class="btn-p btn-1"><a href="bookdetails.html" class="text-light">Browse Library</a></button>
+<script src="https://cdn.jsdelivr.net/npm/bezier-easing@2.0.3/src/index.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
 </html>
