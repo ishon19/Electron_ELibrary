@@ -17,7 +17,8 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^7.0.0"
+    "electron": "^7.0.0",
+    "electron-packager": "^14.1.0"
   },
   "dependencies": {
     "bootbox": "^5.3.2",
