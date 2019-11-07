@@ -117,30 +117,33 @@ margin: auto;
                           <!--Body-->
                           <div class="md-form">
                               <i class="fas fa-book prefix grey-text"></i>
-                              <input type="text" id="defaultForm-email" class="form-control">
+                              <!-- <input type="text" id="bookName" class="form-control"> -->
+                              <select class="form-control" id="bookName">
+                                <option disabled selected>--Select--</option>
+                              </select>
                               <label for="defaultForm-email">Book Name</label>
                           </div>
                           <div class="md-form">
                               <i class="fas fa-user-tag prefix grey-text"></i>
-                              <input type="password" id="defaultForm-pass" class="form-control">
+                              <input type="text" id="studentName" class="form-control">
                               <label for="defaultForm-pass">Student Name</label>
                           </div>
-                          <div class="md-form">
+                          <!-- <div class="md-form">
                               <i class="fas fa-calendar-alt prefix grey-text"></i>
                               <input type="password" id="defaultForm-pass" class="form-control">
                               <label for="defaultForm-pass">Date</label>
-                          </div>
+                          </div> -->
                           <div class="md-form">
                               <i class="fas fa-clock prefix grey-text"></i>
-                              <input type="password" id="defaultForm-pass" class="form-control">
+                              <input type="date" id="returnDate" class="form-control">
                               <label for="defaultForm-pass">Return Date</label>
                           </div>
                           <div class="md-form">
                               <i class="fa fa-pencil prefix white-text"></i>
-                              <textarea type="text" id="form82" class="md-textarea" style="height: 100px"></textarea>
+                              <textarea type="text" id="feedBack" class="md-textarea" style="height: 100px"></textarea>
                               <label for="form82">FeedBack</label>
                           </div>
-                          <div class="text-center">
+                          <div class="text-center" id="returnBook">
                               <button class="btn btn-default waves-effect waves-light"><a href="adminPage.html" class="text-light">Return</a></button>
                           </div>
                       </div>

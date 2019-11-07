@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 var $ = require("jquery");
+var bootstrap = require('bootstrap');
+var bootbox = require("bootbox");
 const DatabaseName = "DB";
 let pathName = path.join(__dirname, 'data');
 let file = path.join(pathName, DatabaseName);
@@ -66,13 +68,13 @@ $("#issueBook").click(function(){
 
         //Update the count of the book in the bookInfo key
         localData.bookInfo.map(function(item,index){
+          if(item.bookName===bookName){
           //check if the book is available
           if(item.numBooks<=0){
-              bootbox.alert("Sorry, no copy of "+item.bookName+" is available.");
-              return;
-          }
-          if(item.bookName===bookName){
-              item.numBooks = (parseInt(item.numBooks)-1)<0?0:parseInt(item.numBooks)-1;
+            bootbox.alert("Sorry, no copy of "+item.bookName+" is available.");
+            return;
+           }
+          item.numBooks = (parseInt(item.numBooks)-1)<0?0:parseInt(item.numBooks)-1;
           }
         });
 
@@ -82,7 +84,9 @@ $("#issueBook").click(function(){
             if(err){
               console.log("err has occured");
             }
-            console.log("the file has been written succesfully");
+            bootbox.alert("Book issued successfully.",function(){
+                document.location.replace('./adminPage.html');  
+            });
             return;
           });
     }else{

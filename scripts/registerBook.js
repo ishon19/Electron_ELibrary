@@ -58,7 +58,9 @@ saveButton.click(function(){
         if(err){
           console.log("err has occured");
         } else{
-          bootbox.alert("Data Saved Successfully!");
+          bootbox.alert("Data Saved Successfully!",function(){
+            location.replace("./adminPage.html");
+          });
         }
         return;
       })
@@ -98,7 +100,9 @@ saveButton.click(function(){
         if(err){
           console.log("err has occured");
         } else{
-          bootbox.alert("Data Saved Successfully!");
+          bootbox.alert("Data Saved Successfully!",function(){
+            location.replace("./adminPage.html");
+          });
         }
         return;
       })
