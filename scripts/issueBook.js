@@ -5,6 +5,12 @@ const DatabaseName = "DB";
 let pathName = path.join(__dirname, 'data');
 let file = path.join(pathName, DatabaseName);
 
+//utility function
+function checkValue(value){
+    if(value===undefined || value===null || value.trim()==="") return false;
+    return true;
+  }
+
 //Load the saved books list
 fs.readFile(file, function(err, data){
     if(!err){
@@ -36,6 +42,11 @@ $("#issueBook").click(function(){
    var issueDate = $("#issueDate").val();
    var returnDate = $("#returnDate").val();
 
+   if(!checkValue(bookName) || !checkValue(studentName) || !checkValue(issueDate) ||!checkValue(returnDate)){
+       bootbox.alert("Please fill all the fields before issuing the book.");
+       return;
+   }
+
    //check if the database exists
    fs.readFile(file, function(err, data){
     if(!err){
@@ -52,6 +63,19 @@ $("#issueBook").click(function(){
         //set in the array
         issueArr.push(issueObj);
         localData["issueInfo"] = issueArr;
+
+        //Update the count of the book in the bookInfo key
+        localData.bookInfo.map(function(item,index){
+          //check if the book is available
+          if(item.numBooks<=0){
+              bootbox.alert("Sorry, no copy of "+item.bookName+" is available.");
+              return;
+          }
+          if(item.bookName===bookName){
+              item.numBooks = (parseInt(item.numBooks)-1)<0?0:parseInt(item.numBooks)-1;
+          }
+        });
+
         var finalData = JSON.stringify(localData);
         //Write the data
         fs.writeFile(file, finalData, function(err){
